@@ -1,13 +1,17 @@
-def input_positive_number(prompt):
-    n = 0
-    while n <= 0 :
+def input_age(prompt):
+    while True:
         n = int(input(prompt))
-    return n
+        if 0 <= n <= 120:
+            return n
 
-def display_multiplication_table(n):
-    for i in range (1, 10):
-        print(f'{n} x {i} = {n * i:2d}')
-        i+= 1
+def is_adult(age):
+    if age >= 19:
+        return True
+    else:
+        return False
 
-n = input_positive_number('출력할 구구단을 양의 정수로 입력하세요: ')
-display_multiplication_table(n)
+age = input_age('나이? ')
+if is_adult(age):
+    print('당신은 성인입니다. ')
+else:
+    print('당신은 성인이 아닙니다.')
