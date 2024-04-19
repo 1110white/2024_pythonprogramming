@@ -1,13 +1,20 @@
-def input_positive_number(prompt):
-    n = 0
-    while n <= 0 :
-        n = int(input(prompt))
-    return n
+def display_triangle(height):
+    for i in range (1, height + 1):
+        display_nums(i)
+        print()
 
-def display_multiplication_table(n):
-    for i in range (1, 10):
-        print(f'{n} x {i} = {n * i:2d}')
-        i+= 1
+def display_nums(n):
+    for i in range(1, n + 1):
+        print(i, end='')
+        
 
-n = input_positive_number('출력할 구구단을 양의 정수로 입력하세요: ')
-display_multiplication_table(n)
+# 이중 for문을 활용한 경우 아래 함수 하나로 가능
+# def display_triangle(height):
+    # for i in range (1, height + 1):
+        # for j in range (1, i + 1):
+            # print(j, end='')
+        # print()
+
+
+h = int(input('높이? '))
+display_triangle(h)
