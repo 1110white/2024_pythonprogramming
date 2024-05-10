@@ -1,0 +1,14 @@
+def find_max(lst):
+    m = lst[0]
+    for i in range (0, len(lst)):
+        if m < lst[i]:
+            m = lst[i]
+    return m
+
+
+list = []
+for i in range(0,5):
+    a = int(input('정수 입력: '))
+    list.append(a)
+
+print(f'가장 큰 정수는 {find_max(list)}입니다.')
