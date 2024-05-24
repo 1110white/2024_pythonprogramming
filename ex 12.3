@@ -1,0 +1,17 @@
+import os
+filename
+shoppingbag. txt'
+def buy(sbag):
+print('[구입]')
+item = input('상품명?
+if item ==
+return False
+sbag.append(item)
+print(f'장바구니에 (item)가(이) 담겼습니다\n' )
+return True
+def show(sbag):
+print('In>>> 장바구니 보기: ', end="')
+print(sbag)
+def save_data(sbag, filepath):
+with open (filepath, 'w', encoding='utf8') as file:
+for item in sbag:
