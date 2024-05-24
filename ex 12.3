@@ -20,36 +20,24 @@ def show(sbag):
 def save_data(sbag, filepath):
     with open (filepath, 'w', encoding='utf8') as file:
         for item in sbag:
+            file.write(f'(item)\n')
 
-for item in sbag:#
-23
-file.write(f'(item)\n')
-24 def load_data(filepath):#
-25 26 27
-lines = []#
-with open(filepath, 'r', encoding='utf8') as file:#
-for line in file:#
-28
-lines.append(line.strip("In'))#
-29
-return lines#
-30
-31t
-32 if os.path.exists(filename): #
-33
-print('[파일 읽기]') #
-34
-shopping_bag = load_data(filename) #
-35
-show(shopping_bag) #
-36 else: #
-37
-shopping_bag= []
-38 while True:
-39
-if buy(shopping_bag) == False:
-40
-break
-41 show(shopping_bag)
-42 save_data(shopping_bag, filename)
+def load_data(filepath):
+    lines = []
+    with open(filepath, 'r', encoding='utf8') as file:
+        for line in file:
+            lines.append(line.strip('\n'))
+    return lines
+
+if os.path.exists(filename):
+    print('[파일 읽기]')
+    shopping_bag = load_data(filename)
+    show(shopping_bag)
+else:
+    shopping_bag= []
+while True:
+    if buy(shopping_bag) == False:
+        break
+show(shopping_bag)
+save_data(shopping_bag, filename)
             
